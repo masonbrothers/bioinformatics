@@ -1,2 +1,2 @@
 # bioinformatics
-A C++ bioinformatics library
+A C++ bioinformatics toolset
