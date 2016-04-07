@@ -292,7 +292,6 @@ int main(int argc, char* argv[])
 	vector<Codon> codonSheet = getCodonSheet(codonSheetLocation);
 
 
-
 	//printCodonSheetToConsole(codonSheet);
 
 	string DNA = getDNA(DNAlocation);
@@ -306,7 +305,9 @@ int main(int argc, char* argv[])
 	int minProteinSize = 100;
 	vector<Frame> bigFrames = getMinimumFrames(DNA, codonSheet, minProteinSize);
 	printFramesToConsole(bigFrames);
+
 	//printFramesToFile(bigFrames,"Frames.txt");
+
 	cout << "There where " << bigFrames.size() << " reading frames with or more than " << minProteinSize << " amino acids.";
 	cout << endl << endl;
 
@@ -329,7 +330,9 @@ int main(int argc, char* argv[])
 	cout << endl;
 	*/
 
+
 	//printMachineFramesToFile(bigFrames, "Stuff.txt");
+
 	//printFramesToConsole(bigFrames);
 
 
@@ -353,7 +356,8 @@ int main(int argc, char* argv[])
 	printFramesToConsole(forwardFrames);
 	*/
 	cout << endl;
-	//cout << "Some Error Occured." << endl << endl;
+
+	cout << "Error: " << error << endl << endl;
 
 	/*
 	int testNumber = 4;
@@ -409,7 +413,8 @@ int main(int argc, char* argv[])
 	cout << measureAngle(one,two,three) << endl << measureDistance(one,two) << endl;
 	*/
 	//cout << rand() << "\t" << getRandomNumber(0,100,1) << endl;
-	//cout << "End of the Program!" << endl;
+
+	cout << "End of the Program!" << endl;
 	return 0;
 }
 
