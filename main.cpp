@@ -262,17 +262,36 @@ Also a similar problem was found with the codon sheet. The last entry seems to b
 
 */
 
-int main()
+int main(int argc, char* argv[])
 {
+	vector<string> userConsoleArgs;
+	for (int i = 0; i < argc; i++)
+	{
+		string temp(argv[i]);
+		userConsoleArgs.push_back(temp);
+	}
+
+	return 1;
+	bool helpFlag = false;
+	bool errorFlag = false;
+	for (int i = 0; i < userConsoleArgs.size(); i++)
+	{
+		if(userConsoleArgs.compare("-o") && (i + 1) != userConsoleArgs.size())
+		{
+
+		}
+	}
+	if (argc >= 1)
 	bool error = 0;
 	string codonSheetLocation = "CodonDatabase.txt";
 	string DNAlocation = "DNAInput.txt";
 	string outputLocation = "DNAOutput.txt";
-	cout << "Copyright(C) 2014. Mason Brothers. All Rights Reserved." << endl;
+	outputLocation = "CuratedOutput.txt";
+	cout << "Copyright(C) 2016. Mason Brothers. All Rights Reserved." << endl;
 	cout << "This program takes DNA and converts it to Proteins." << endl << endl;
 	vector<Codon> codonSheet = getCodonSheet(codonSheetLocation);
 
-	outputLocation = "CuratedOutput.txt";
+
 
 	//printCodonSheetToConsole(codonSheet);
 
@@ -334,7 +353,7 @@ int main()
 	printFramesToConsole(forwardFrames);
 	*/
 	cout << endl;
-	cout << "Error: " << error << endl << endl;
+	//cout << "Some Error Occured." << endl << endl;
 
 	/*
 	int testNumber = 4;
@@ -390,7 +409,7 @@ int main()
 	cout << measureAngle(one,two,three) << endl << measureDistance(one,two) << endl;
 	*/
 	//cout << rand() << "\t" << getRandomNumber(0,100,1) << endl;
-	cout << "End of the Program!" << endl;
+	//cout << "End of the Program!" << endl;
 	return 0;
 }
 
